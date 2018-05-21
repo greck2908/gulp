@@ -1,13 +1,13 @@
 <!-- front-matter
-id: what-are-tasks
-title: What are Tasks
+id: creating-tasks
+title: Creating Tasks
 hide_title: true
-sidebar_label: What are Tasks
+sidebar_label: Creating Tasks
 -->
 
-# What are Tasks
+# Creating Tasks
 
-Each gulp task is an asynchronous JavaScript function - a function that accepts a callback or returns a stream, promise, observable, etc ([more on that later][node-async]). Due to some platform limitations, synchronous tasks aren’t supported, though there is a pretty nifty [alternative][async-await-sync-tasks].
+Each gulp task is an asynchronous JavaScript function - a function that accepts an error-first callback or returns a stream, promise, event emitter, child process, or observable ([more on that later][async-tasks]). Due to some platform limitations, synchronous tasks aren’t supported, though there is a pretty nifty [alternative][async-tasks-sync].
 
 ## Exporting
 
@@ -46,7 +46,6 @@ exports.default = series(clean, build);
 ## Compose tasks
 
 Gulp provides two powerful composition methods, `series()` and `parallel()`, allowing individual tasks to be composed into larger operations. Both methods accept any number of task functions or composed operations.  `series()` and `parallel()` can be nested within themselves or each other to any depth.
-
 
 To have your tasks execute in order, use the `series()` method.
 ```js
@@ -186,5 +185,7 @@ const javascript = series(clean, function(cb) {
 exports.build = series(css, javascript);
 ```
 
-
+[async-tasks]: LINK_NEEDED
+[async-tasks-sync]:  LINK_NEEDED
 [img-gulp-tasks-command]: https://gulpjs.com/img/docs-gulp-tasks-command.png
+[async-once]: https://github.com/gulpjs/async-once
