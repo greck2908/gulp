@@ -11,7 +11,7 @@ Gulp allows you to use existing JavaScript knowledge to write gulpfiles or to us
 
 ## Gulpfile explained
 
-A gulpfile is a file in your project directory titled `gulpfile.js` (or capitalized as `Gulpfile.js`, like `Makefile`), that automatically loads when you run the `gulp` command. Within this file, you’ll often see gulp APIs, like `src()`, `dest()`, `series()`, or `parallel()` but any vanilla JavaScript or Node modules can be used. Any exported functions will be registered into gulp's task system.
+A gulpfile is a file in your project directory titled `gulpfile.js` (or capitalized as `Gulpfile.js`, like Makefile), that automatically loads when you run the `gulp` command. Within this file, you’ll often see gulp APIs, like `src()`, `dest()`, `series()`, or `parallel()` but any vanilla JavaScript or Node modules can be used. Any exported functions will be registered into gulp's task system.
 
 ## Transpilation
 
