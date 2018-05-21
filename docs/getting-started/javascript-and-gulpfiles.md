@@ -31,6 +31,6 @@ Each task can be split into its own file, then imported into your gulpfile for c
 Node’s module resolution allows you to replace your `gulpfile.js` with a directory called `gulpfile` that contains an `index.js` file which is treated as a `gulpfile.js`.  This directory could then contain your individual modules for tasks.
 
 
-[gulpfile-transpilation]: LINK_TO_TRANSPILATION
+[gulpfile-transpilation]: LINK_NEEDED
 [ts-node-module]: https://www.npmjs.com/package/ts-node
 [babel-register-module]: https://www.npmjs.com/package/@babel/register
