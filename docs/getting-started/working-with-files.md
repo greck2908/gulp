@@ -11,7 +11,7 @@ The `src()` and `dest()` methods are exposed by gulp to interact with files on y
 
 `src()` is given a [glob][globs-page] to read from the file system and produces a [node.js stream][node-streams-docs]. It locates all matching files and reads them into memory to pass through the stream.
 
-The stream produced by `src()` should be returned from a task to signal async completion, as mentioned in [What are Tasks?](what-are-tasks.md).
+The stream produced by `src()` should be returned from a task to signal async completion, as mentioned in [What are Tasks](what-are-tasks.md).
 
 ```js
 const { src, dest } = require('gulp');
