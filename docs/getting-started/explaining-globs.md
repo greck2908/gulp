@@ -49,7 +49,7 @@ Here, the glob is appropriately restricted to the `scripts/` directory. It will 
 
 ## Special Character: ! (negative)
 
-Since globs are matched in array order, a negative glob must follow at least one non-negative glob in an array. The first finds a set of matches, then the negative glob removes a portion of those results.
+Since globs are matched in array order, a negative glob must follow at least one non-negative glob in an array. The first finds a set of matches, then the negative glob removes a portion of those results. These are most performant when they only include literal characters.
 
 ```js
 ['script/**/*.js', '!scripts/vendor/']
@@ -58,10 +58,10 @@ Since globs are matched in array order, a negative glob must follow at least one
 If any non-negative globs follow a negative, nothing will be removed from the later set of matches.
 
 ```js
-['script/*.js', '!scripts/vendor/', 'scripts/vendor/react.js']
+['script/**/*.js', '!scripts/vendor/', 'scripts/vendor/react.js']
 ```
 
-Negative globs can be used as an alternative for restricting double-star globs. These are most performant when they only include literal characters.
+Negative globs can be used as an alternative for restricting double-star globs.
 
 ```js
 ['**/*.js', '!node_modules/']
