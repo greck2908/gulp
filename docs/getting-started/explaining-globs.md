@@ -15,7 +15,7 @@ The `src()` method expects a single glob string or an array of globs to determin
 
 A segment is everything between separators. The separator in a glob is always the `/` character - regardless of the operating system - even in Windows where the path separator is `\\`.  In a glob, `\\` is reserved as the escape character.
 
-Here, the `*` is escaped, so it is treated as a literal instead of a wildcard character.
+Here, the * is escaped, so it is treated as a literal instead of a wildcard character.
 ```js
 'glob_with_uncommon_\\*_character.js'
 ```
