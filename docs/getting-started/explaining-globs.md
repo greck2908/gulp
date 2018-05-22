@@ -26,7 +26,7 @@ Avoid using Node’s `path` methods, like `path.join`, to create globs. On Windo
 const invalidGlob = path.join(__dirname, 'src/*.js');
 ```
 
-## Special Character: * (single-star)
+## Special character: * (single-star)
 
 Matches any amount - including none - of characters within a single segment. Useful for globbing files within one directory.
 
@@ -35,19 +35,19 @@ This glob will match files like `index.js`, but not files like `scripts/index.js
 '*.js'
 ```
 
-## Special Character: ** (double-star)
+## Special character: ** (double-star)
 
 Matches any amount - including none - of characters across segments. Useful for globbing files in nested directories. Make sure to appropriately restrict your double-star globs, to avoid matching large directories unnecessarily.
 
 Here, the glob is appropriately restricted to the `scripts/` directory. It will match files like `scripts/index.js`, `scripts/nested/index.js`, and `scripts/nested/twice/index.js`.
 
-```txt
+```js
 'scripts/**/*.js'
 ```
 
 <small>In the previous example, if `scripts/` wasn’t prefixed, all dependencies in `node_modules` or other directories would also be matched.</small>
 
-## Special Character: ! (negative)
+## Special character: ! (negative)
 
 Since globs are matched in array order, a negative glob must follow at least one non-negative glob in an array. The first finds a set of matches, then the negative glob removes a portion of those results. These are most performant when they only include literal characters.
 
@@ -73,7 +73,7 @@ Negative globs can be used as an alternative for restricting double-star globs.
 
 Two or more globs that (un)intentionally match the same file are considered overlapping. When overlapping globs are used within a single `src()`, gulp does its best to remove the duplicates, but doesn’t attempt to deduplicate across separate `src()` calls.
 
-## Advanced Resources
+## Advanced resources
 
 Most of what you’ll need to work with globs in gulp is covered here. If you’d like to get more in depth, here are a few resources.
 
