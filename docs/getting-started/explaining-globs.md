@@ -51,6 +51,16 @@ Here, the glob is appropriately restricted to the `scripts/` directory. It will 
 
 Since globs are matched in array order, a negative glob must follow at least one non-negative glob in an array. The first finds a set of matches, then the negative glob removes a portion of those results.
 
+```js
+['script/**/*.js', '!scripts/vendor/']
+```
+
+If any non-negative globs follow a negative, nothing will be removed from the later set of matches.
+
+```js
+['script/*.js', '!scripts/vendor/', 'scripts/vendor/react.js']
+```
+
 Negative globs can be used as an alternative for restricting double-star globs. These are most performant when they only include literal characters.
 
 ```js
@@ -58,12 +68,6 @@ Negative globs can be used as an alternative for restricting double-star globs. 
 ```
 
 <small>In the previous example, if the negative glob was `!node_modules/**/*.js`, every match would have to be compared against the negative glob, which would be extremely slow.</small>
-
-If any non-negative globs follow a negative, nothing will be removed from the later set of matches.
-
-```js
-['script/*.js', '!scripts/vendor/', 'scripts/vendor/react.js']
-```
 
 ## Overlapping globs
 
