@@ -117,7 +117,7 @@ exports.default = passingCallback;
 
 Synchronous tasks are no longer supported. They often led to subtle mistakes that were hard to debug, like forgetting to return your streams from a task.
 
-When you see the warning "Did you forget to signal async completion?" then none of the techniques mentioned above were used. You’ll need to use the error-first callback or return a stream, promise, event emitter, child process, or observable to resolve the issue.
+When you see the warning _"Did you forget to signal async completion?"_ then none of the techniques mentioned above were used. You’ll need to use the error-first callback or return a stream, promise, event emitter, child process, or observable to resolve the issue.
 
 ## Using async/await
 
