@@ -61,7 +61,7 @@ exports.default = function(cb) {
 
 ## Conditional plugins
 
-Since plugin operations shouldn't be file-type-aware, you may need a plugin like `gulp-if` or `gulp-filter` to transform subsets of files.
+Since plugin operations shouldn't be file-type-aware, you may need a plugin like [gulp-if][gulp-if-package] to transform subsets of files.
 
 ```js
 const { src, dest } = require('gulp');
@@ -101,7 +101,7 @@ exports.default = function() {
     .pipe(through2.obj(function(file, _, cb) {
       if (file.isBuffer()) {
         const code = uglify.minify(file.contents.toString())
-        filee.contents = Buffer.from(code)
+        file.contents = Buffer.from(code)
       }
     }))
     .pipe(dest('output/'));
@@ -110,3 +110,4 @@ exports.default = function() {
 
 [gulp-plugin-site]: https://gulpjs.com/plugins/
 [through2-docs]: https://github.com/rvagg/through2
+[gulp-if-package]: https://www.npmjs.com/package/gulp-if
